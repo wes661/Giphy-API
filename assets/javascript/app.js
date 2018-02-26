@@ -19,7 +19,7 @@ var emotions = ["Happy", "Sad", "Mad"];
 	        	var p1 = $("<p>").text(rating);
 	        	var gifUrl = response.data[i].images.fixed_height_still.url;
 				
-	        	var gif = $("<img id='gifImg' class='col-sm-6'>");
+	        	var gif = $("<img class='gifImg col-sm-6'>");
 	        	gif.attr("src", gifUrl);
 	        	gif.attr({'data-animate' : response.data[i].images.fixed_height.url});
 	        	gif.attr({'data-still' : response.data[i].images.fixed_height_still.url});
@@ -35,7 +35,7 @@ var emotions = ["Happy", "Sad", "Mad"];
 
 			function animate(){
 
-				$('#gifImg').on('click', function(){
+				$('.gifImg').on('click', function(){
 					if($(this).attr('data-state') === 'still'){
 						$(this).attr('src', $(this).attr('data-animate'));
 						$(this).attr('data-state', 'data-animate');
