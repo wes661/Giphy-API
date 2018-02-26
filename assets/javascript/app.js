@@ -10,14 +10,15 @@ var emotions = ["Happy", "Sad", "Mad"];
 	          url: queryURL,
 	          method: "GET"
 	        }).then(function(response) {
-	        	
+	        	var gifDiv = $("<div class='gifStill' data-state='still'> ");
+
 	        	for(var i = 0; i < response.data.length; i++ ){
 	        		console.log(response.data[i]);
 	        		
 	   			var rating = response.data[i].rating;
 	        	var p1 = $("<p>").text(rating);
 	        	var gifUrl = response.data[i].images.fixed_height_still.url;
-				var gifDiv = $("<div class='gifStill' data-state='still'> ");
+				
 	        	var gif = $("<img id='gifImg' class='col-sm-6'>");
 	        	gif.attr("src", gifUrl);
 	        	gif.attr({'data-animate' : response.data[i].images.fixed_height.url});
@@ -25,21 +26,25 @@ var emotions = ["Happy", "Sad", "Mad"];
 	        	gif.attr({'data-state' : 'still' });
 	        	gifDiv.append(p1);
 	        	gifDiv.append(gif);
-	        	$('#emotion-view').append(gifDiv)
+	        	$('#emotion-view').html(gifDiv)
 	        	}
-	        
+
+	        	animate();
+			});
+		}
+
+			function animate(){
+
 				$('#gifImg').on('click', function(){
-					$(this).attr('src', $(this).attr('data-animate'));
-					$(this).attr('data-state', 'data-animate');
+					if($(this).attr('data-state') === 'still'){
+						$(this).attr('src', $(this).attr('data-animate'));
+						$(this).attr('data-state', 'data-animate');
+					} else {
+				        $(this).attr("src", $(this).attr("data-still"));
+				        $(this).attr("data-state", "still");
+				    }
 				})
-
-	        	
-
-
-	        	
-	        });
-
-	    }
+			}
 
 	      
 	      function renderButtons() {
@@ -80,6 +85,5 @@ var emotions = ["Happy", "Sad", "Mad"];
 
 	      // Adding a click event listener to all elements with a class of "emotion-btn"
 	      $(document).on("click", ".emotion-btn", displayEmotion);
-
-	      // Calling the renderButtons function to display the intial buttons
+	      	      // Calling the renderButtons function to display the intial buttons
 	      renderButtons();
