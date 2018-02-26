@@ -14,8 +14,9 @@
 	width: 100%;
 }
 
-img, p{
-	margin: 10px;
+#gifImg{
+	margin: 0;
+	padding: 0;
 	
 
 }
