@@ -1,4 +1,4 @@
-var emotions = ["Happy", "Sad", "Mad"];
+var emotions = ["Happy", "Sad", "Mad", "Excited", "Furious", "Delighted", "Emotional", "Confused", "Depressed", "Laughing", "Crying", "Nervous", "Anxious"];
 
 	    function displayEmotion() {
 
@@ -16,13 +16,13 @@ var emotions = ["Happy", "Sad", "Mad"];
 	        		console.log(response.data[i]);
 	        		
 	   			var rating = response.data[i].rating;
-	        	var p1 = $("<p>").text(rating);
-	        	var gifUrl = response.data[i].images.fixed_height_still.url;
+	        	var p1 = $("<p class='rating'>").text("Rated: " + rating);
+	        	var gifUrl = response.data[i].images.fixed_height_small_still.url;
 				
-	        	var gif = $("<img class='gifImg col-sm-6'>");
+	        	var gif = $("<img class='gifImg col-sm-12'>");
 	        	gif.attr("src", gifUrl);
-	        	gif.attr({'data-animate' : response.data[i].images.fixed_height.url});
-	        	gif.attr({'data-still' : response.data[i].images.fixed_height_still.url});
+	        	gif.attr({'data-animate' : response.data[i].images.fixed_height_small.url});
+	        	gif.attr({'data-still' : response.data[i].images.fixed_height_small_still.url});
 	        	gif.attr({'data-state' : 'still' });
 	        	gifDiv.append(p1);
 	        	gifDiv.append(gif);

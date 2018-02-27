@@ -8,6 +8,21 @@
 	border-radius: 100px;
 }
 
+.rating{
+	text-align: center;
+	font-weight: bold;
+}
+
+#add-emotion{
+	margin-left: 5px;
+	margin-right: 5px;
+	background-color: #127bb7;
+	color: white;
+	border-radius: 100px;
+	font-weight: bolder;
+	font-size: 15px;
+}
+
 .emotion{
 	border: 3px solid #127bb7;
 	border-radius: 30px;
@@ -16,8 +31,7 @@
 
 .gifImg{
 	
-	padding: 0;
-		
+	border-radius: 50px;
 
 }
 
