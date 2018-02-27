@@ -35,7 +35,7 @@ var emotions = ["Happy", "Sad", "Mad", "Excited", "Furious", "Delighted", "Emoti
 
 			function animate(){
 
-				$('.gifImg').on('click', function(){
+				$('.gifImg').hover(function(){
 					if($(this).attr('data-state') === 'still'){
 						$(this).attr('src', $(this).attr('data-animate'));
 						$(this).attr('data-state', 'data-animate');
