@@ -1,11 +1,21 @@
+body{
+	margin: 0 auto;
+}
+
+.img-fluid{
+	height: 250px;
+	width: 250px;
+}
+
 
 
 .emotion-btn{
-	margin-left: 5px;
-	margin-right: 5px;
+	margin: 8px; 
+	font-size: 18px;
 	background-color: #127bb7;
 	color: white;
 	border-radius: 100px;
+	text-align: center;
 }
 
 .rating{
@@ -14,8 +24,7 @@
 }
 
 #add-emotion{
-	margin-left: 5px;
-	margin-right: 5px;
+	margin: 8px;
 	background-color: #127bb7;
 	color: white;
 	border-radius: 100px;
@@ -32,6 +41,9 @@
 .gifImg{
 	
 	border-radius: 50px;
+	height: 250px;
+	
+	
 
 }
 
