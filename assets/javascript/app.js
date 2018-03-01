@@ -3,7 +3,7 @@ var emotions = ["Happy", "Sad", "Mad", "Excited", "Furious", "Delighted", "Emoti
 	    function displayEmotion() {
 
 	        var emotion = $(this).attr("data-name");
-	        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + emotion + "&limit=10&api_key=DHsjRmQevQ0JKl36B2yOJJUp85Zt0VvF";
+	        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + emotion + "&limit=10&api_key=DHsjRmQevQ0JKl36B2yOJJUp85Zt0VvF";
 
 	        
 	        $.ajax({
